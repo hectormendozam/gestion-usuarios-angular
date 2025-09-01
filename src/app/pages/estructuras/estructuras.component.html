@@ -1,0 +1,42 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">Ejemplos de Directivas</h2>
+
+    <!-- ngIf -->
+  <h4>Condicional con *ngIf</h4>
+    <p class="text-muted">Renderiza o elimina un elemento del DOM dependiendo de una condición booleana.</p>
+    <div class="alert alert-info">
+    <p *ngIf="mostrar">Este texto se muestra porque la condición es verdadera.</p>
+    </div>
+    <button class="btn btn-primary btn-sm" (click)="mostrar = !mostrar">
+    {{ mostrar ? 'Ocultar' : 'Mostrar' }} texto
+    </button>
+
+    <hr>
+
+    <!-- ngFor -->
+  <h4>Lista con *ngFor</h4>
+    <p class="text-muted">Itera sobre un arreglo y genera un elemento por cada valor.</p>
+    <ul class="list-group mb-3">
+    <li class="list-group-item" *ngFor="let item of tecnologias">{{ item }}</li>
+    </ul>
+
+    <hr>
+
+    <!-- ngSwitch -->
+  <h4>Ejemplo de *ngSwitch</h4>
+    <p class="text-muted">Evalúa una expresión y muestra solo el bloque que coincide con el valor.</p>
+    <select [(ngModel)]="opcion" class="form-select mb-3" style="max-width: 200px;">
+    <option value="A">Opción A</option>
+    <option value="B">Opción B</option>
+    <option value="C">Opción C</option>
+    </select>
+
+    <div [ngSwitch]="opcion" class="alert alert-secondary">
+    <p *ngSwitchCase="'A'">Has seleccionado la <strong>Opción A</strong>.</p>
+    <p *ngSwitchCase="'B'">Has seleccionado la <strong>Opción B</strong>.</p>
+    <p *ngSwitchCase="'C'">Has seleccionado la <strong>Opción C</strong>.</p>
+    <p *ngSwitchDefault>Selecciona una opción válida.</p>
+    </div>
+
+</div>
